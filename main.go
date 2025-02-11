@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand/v2"
 	"strconv"
+	"strings"
 )
 
 type radix struct {
@@ -54,7 +55,7 @@ func main() {
 
 		// if the user guessed
 		attempted++
-		if input == toValue {
+		if strings.EqualFold(input, toValue) {
 			correct++
 			fmt.Printf("↳ Correct ✅ - %d/%d (%.2f%%)\n",
 				correct, attempted, float32(correct)/float32(attempted)*100,
